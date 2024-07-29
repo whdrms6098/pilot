@@ -1,0 +1,295 @@
+:root {
+    --color-white: white;
+    --color-black: #0c0c0c;
+    --color-brand-black: #101010;
+    --color-grey: #373737;
+    --color-dark-grey: #333;
+    --color-light-grey: #999;
+    --color-background-grey: #1e1e1e;
+}
+
+.blind {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    margin: -1px;
+}
+
+.sticky {
+    width: 100%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
+.inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 0 40px;
+}
+
+.font-large {
+    font-size: 10vw;
+}
+
+.font-medium {
+    font-size: 3.75vw;
+}
+
+.font-small {
+    font-size: 1.2vw;
+}
+
+.font-m-small {
+    font-size: 1.6vw;
+}
+
+.font-l-small {
+    font-size: 2.3vw;
+}
+
+.point-opacity {
+    color: rgba(255, 255, 255, .33);
+}
+
+.font-wrap {
+    overflow: hidden;
+}
+
+.ico-arrow {
+    width: .65vw;
+    height: auto;
+    transform: rotate(45deg);
+}
+
+.link-btn {
+    width: 100%;
+    max-width: 253px;
+    height: 60px;
+    align-items: center;
+    display: flex;
+    position: relative;
+}
+
+.link-btn:hover .link-arrow img {
+    transform: rotate(45deg);
+}
+
+.link-btn .link-text {
+    flex: 1;
+    text-align: center;
+
+}
+
+.link-btn .link-arrow {
+    position: relative;
+    width: 55px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.link-btn .link-arrow img {
+    width: 13px;
+    height: auto;
+    transition: transform .3s;
+}
+
+.btn-line {
+    width: 0.9px;
+    height: 11px;
+    background-color: var(--color-white);
+    position: absolute;
+}
+
+.btn-line.top-left {
+    top: 0;
+    left: 0;
+}
+
+.btn-line.top-right {
+    top: 0;
+    right: 0;
+}
+
+.btn-line.bottom-left {
+    bottom: 0;
+    left: 0;
+}
+
+.btn-line.bottom-right {
+    bottom: 0;
+    right: 0;
+}
+
+.btn-line.long {
+    width: 100%;
+    height: 1px;
+}
+
+.btn-line.long.top {
+    top: 0;
+}
+
+.btn-line.long.bottom {
+    bottom: 0;
+}
+
+.ico-cross {
+    width: 2.3vw;
+    height: auto;
+}
+
+.screen-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.screen-line .line-hr {
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, .18)
+}
+
+.screen-line .line-vr {
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, .18)
+}
+
+.screen-line .line-cross {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.screen-line .line-circle {
+    width: 150vw;
+    height: 150vw;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, .2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: scale-circle 4s infinite ease-in-out;
+}
+
+.text-opacity {
+    animation: text-opacity 1s infinite;
+}
+
+.cross-wrap {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+}
+
+.cross-wrap .ico-cross {
+    position: absolute;
+    transition: transform .5s ease-in-out;
+    pointer-events: auto;
+}
+
+.cross-wrap .ico-cross:hover {
+    transform: rotate(180deg)
+}
+
+.cross-wrap .ico-cross.left {
+    left: 40px;
+}
+
+.cross-wrap .ico-cross.right {
+    right: 40px;
+}
+
+.cross-wrap .ico-cross.top {
+    top: 40px;
+}
+
+.cross-wrap .ico-cross.bottom {
+    bottom: 40px;
+}
+
+.swiper-container {
+    cursor: grab;
+}
+
+.swiper-container:active {
+    cursor: grabbing;
+}
+
+.word-wrap .char {
+    opacity: .12;
+}
+
+@keyframes scale-circle {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes text-opacity {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.2;
+        transform: scale(0.95);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: translateX(-50%) rotate(0);
+    }
+
+    100% {
+        transform: translateX(-50%) rotate(-360deg);
+    }
+}
+
+@keyframes scale-cross {
+
+    0%,
+    100% {
+        transform: translateX(-50%) scale(1);
+    }
+
+    50% {
+        transform: translateX(-50%) scale(1.1);
+    }
+}
